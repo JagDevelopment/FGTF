@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "This is a private area, please log in"
+AuthUserFile "C:\Users\Jared Beaudrot\Documents\httppasswordfile.txt"
+AuthGroupFile /dev/null
+<Limit GET POST PUT>
+require valid-user
+</Limit>

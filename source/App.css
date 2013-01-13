@@ -1,0 +1,73 @@
+/*
+	Put anything you reference with "url()" in ../assets/
+	This way, you can minify your application, and just remove the "source" folder for production
+*/
+#app {
+	margin: 16px;
+	border-radius: 4px;
+	background-image: url('../assets/images/BGPic.png') ;
+	background-repeat: repeat;
+	padding: 16px;
+	box-shadow: 5px 5px 5px 5px #000;
+	font-family: "trebuchet MS bold";
+}
+
+.textArea
+{
+	font-family: "trebuchet MS";
+}
+
+.promptText
+{
+	font-family: "trebuchet MS bold";
+	font-variant: small-caps;
+	text-align: center;
+	font-size: 125%;
+}
+
+.divider
+{
+width: 80%;
+opacity: .6;
+}
+
+.divider2
+{
+width: 50%;
+opacity: .3;
+}
+
+.calendarDay
+{
+height: 120px;
+width: 60px;
+border: 2px ridge #CCC;
+z-index: 10;
+position: relative;
+}
+
+.title
+{
+margin-left: 12%;
+margin-right: 10%;
+width: 40%;
+}
+
+.monthFinder
+{
+text-align: center;
+}
+
+.menuItem
+{
+padding: 4px 0px 4px 9px;
+}
+
+.tournamentImage
+{
+background-image: url('../assets/images/sampleTournamentStyle1.png') ;
+background-repeat: no-repeat;
+height: 120px;
+width: 60px;
+border: 2px ridge #CCC;
+}
