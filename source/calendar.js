@@ -70,7 +70,7 @@ enyo.kind({
 				{name: "sort", content: "Only show: ", style: "padding: 5px 3px 0px 0px;"},
 				{kind: "onyx.MenuDecorator", components: [
 						{name: "sortingContent", content: "Show All"},
-						{name: "Sorting", kind: "onyx.Menu", maxHeight: 30, onSelect: "getSort", components: [
+						{name: "Sorting", kind: "onyx.Menu", floating: true, onSelect: "getSort", components: [
 							{value: "Dead or Alive 5", content: "Dead or Alive 5", classes: "menuItem"},
 							{value: "King of Fighters XIII", content: "King of Fighters XIII", classes: "menuItem"},
 							{value: "Mortal Kombat 9", content: "Mortal Kombat 9", classes: "menuItem"},
@@ -156,18 +156,23 @@ enyo.kind({
 			{kind: "enyo.Scroller", style: "height: 350px;", components: [
 				{tag: "hr", classes: "divider2"},
 				{content: "signed up for", classes: "promptText"},
-				{name: "signedUpForRepeater", kind: "enyo.Repeater", onSetupItem: "setupSignedUpFor", count: 1, style: "width: 40%;", components: [
-					{name: "signedUpFor", content: "", ontap: "toUserEvent"},
+				{name: "signedUpForRepeater", kind: "enyo.Repeater", onSetupItem: "setupSignedUpFor", count: 1,components: [
+						{name: "signedUpFor", content: "", ontap: "toUserEvent", style: "width: 50%;"},
+						//{name: "usersNumSignedUpFor", content: "", style: "width: 40%;"},
 				]},
 				{tag: "hr", classes: "divider2"},
 				{content: "gone to", classes: "promptText"},
-				{name: "tournamentsCompletedRepeater", kind: "enyo.Repeater", onSetupItem: "setupTournamentsCompleted", count: 1, style: "width: 40%;", components: [
-					{name: "tournamentsCompleted", content: "", ontap: "toUserEvent"},
+				{name: "tournamentsCompletedRepeater", kind: "enyo.Repeater", onSetupItem: "setupTournamentsCompleted", count: 1, components: [
+						{name: "tournamentsCompleted", ontap: "toUserEvent", style: "width: 50%"},
+					//	{name: "usersNumTournamentsCompleted", style: "width: 40%"},
 				]},
 				{tag: "hr", classes: "divider2"},
 				{content: "you created", classes: "promptText"},
-				{name: "tournamentsCreatedRepeater", kind: "enyo.Repeater", onSetupItem: "setupTournamentsCreated", count: 1, style: "width: 40%;", components: [
-					{name: "tournamentsCreated", content: "", ontap: "toUserEvent"},
+				{name: "tournamentsCreatedRepeater", kind: "enyo.Repeater", onSetupItem: "setupTournamentsCreated", count: 1,  components: [
+					{kind: "enyo.FittableColumns", components: [				
+						{name: "tournamentsCreated", content: "", ontap: "toUserEvent", style: "width: 50%"},
+					//	{name: "usersNumCreated", content: ""},
+					]},
 				]},
 			]},
 		]},
@@ -193,7 +198,8 @@ enyo.kind({
 					{content: "Start Date: ", style: "padding: 5px 5px 0px 0px;"},
 					{kind: "onyx.MenuDecorator", maxHeight: "5px", components: [
 						{name: "firstMonthContent", content: "Month"},
-						{name: "firstMonth", kind: "onyx.Menu", maxHeight: 200, onSelect: "getFirstMonth", components: [
+						{name: "firstMonth", kind: "onyx.Menu", onSelect: "getFirstMonth", components: [
+							{name: "menuScroller2", kind: "enyo.Scroller", defaultKind: "onyx.MenuItem", vertical: "auto", classes: "enyo-unselectable", maxHeight: "200px", components: [
 								{value: "0", content: "Jan", classes: "menuItem"},
 								{value: "1", content: "Feb", classes: "menuItem"},
 								{value: "2", content: "Mar", classes: "menuItem"},
@@ -206,77 +212,13 @@ enyo.kind({
 								{value: "9", content: "Oct", classes: "menuItem"},
 								{value: "10", content: "Nov", classes: "menuItem"},
 								{value: "11", content: "Dec", classes: "menuItem"},
+							]}
 						]}
 					]},
 					{kind: "onyx.MenuDecorator", components: [
 						{name: "firstDayContent", content: "Day"},
-						{name: "firstDay", kind: "onyx.Menu", maxHeight: 200, onSelect: "getFirstDay", components: [
-								{value: "1", content: "1", classes: "menuItem"},
-								{value: "2", content: "2", classes: "menuItem"},
-								{value: "3", content: "3", classes: "menuItem"},
-								{value: "4", content: "4", classes: "menuItem"},
-								{value: "5", content: "5", classes: "menuItem"},
-								{value: "6", content: "6", classes: "menuItem"},
-								{value: "7", content: "7", classes: "menuItem"},
-								{value: "8", content: "8", classes: "menuItem"},
-								{value: "9", content: "9", classes: "menuItem"},
-								{value: "10", content: "10", classes: "menuItem"},
-								{value: "11", content: "11", classes: "menuItem"},
-								{value: "12", content: "12", classes: "menuItem"},
-								{value: "13", content: "13", classes: "menuItem"},
-								{value: "13", content: "14", classes: "menuItem"},
-								{value: "15", content: "15", classes: "menuItem"},
-								{value: "16", content: "16", classes: "menuItem"},
-								{value: "17", content: "17", classes: "menuItem"},
-								{value: "18", content: "18", classes: "menuItem"},
-								{value: "19", content: "19", classes: "menuItem"},
-								{value: "20", content: "20", classes: "menuItem"},
-								{value: "21", content: "21", classes: "menuItem"},
-								{value: "22", content: "22", classes: "menuItem"},
-								{value: "23", content: "23", classes: "menuItem"},
-								{value: "24", content: "24", classes: "menuItem"},
-								{value: "25", content: "25", classes: "menuItem"},
-								{value: "26", content: "26", classes: "menuItem"},
-								{value: "27", content: "27", classes: "menuItem"},
-								{value: "28", content: "28", classes: "menuItem"},
-								{value: "29", content: "29", classes: "menuItem"},
-								{value: "30", content: "30", classes: "menuItem"},
-								{value: "31", content: "31", classes: "menuItem"},
-							]},
-					]},
-					{kind: "onyx.MenuDecorator", components: [
-						{name: "firstYearContent", content: "Year"},
-						{name: "firstYear", kind: "onyx.Menu", maxHeight: 200, onSelect: "getFirstYear", components: [
-							{value: "2012", content: "2012", classes: "menuItem"},
-							{value: "2013", content: "2013", classes: "menuItem"},
-							{value: "2014", content: "2014", classes: "menuItem"},
-							{value: "2015", content: "2015", classes: "menuItem"},
-							{value: "2016", content: "2016", classes: "menuItem"},
-						]}
-					]}
-				]},
-				{kind: "enyo.FittableColumns", style: "padding: 10px 0px 0px 5px;", components: [
-					{content: "End Date: ", style: "padding: 5px 5px 0px 0px;"},
-					{kind: "onyx.MenuDecorator", components: [
-						{name: "lastMonthContent", content: "Month"},
-						{name: "lastMonth", kind: "onyx.Menu", maxHeight: 200, onSelect: "getLastMonth", components: [
-								{value: "0", content: "Jan", classes: "menuItem"},
-								{value: "1", content: "Feb", classes: "menuItem"},
-								{value: "2", content: "Mar", classes: "menuItem"},
-								{value: "3", content: "Apr", classes: "menuItem"},
-								{value: "4", content: "May", classes: "menuItem"},
-								{value: "5", content: "Jun", classes: "menuItem"},
-								{value: "6", content: "Jul", classes: "menuItem"},
-								{value: "7", content: "Aug", classes: "menuItem"},
-								{value: "8", content: "Sep", classes: "menuItem"},
-								{value: "9", content: "Oct", classes: "menuItem"},
-								{value: "10", content: "Nov", classes: "menuItem"},
-								{value: "11", content: "Dec", classes: "menuItem"},
-						]}
-					]},
-					{kind: "onyx.MenuDecorator", components: [
-						{name: "lastDayContent", content: "Day"},
-						{name: "lastDay", kind: "onyx.Menu", maxHeight: 200, onSelect: "getLastDay", components: [
+						{name: "firstDay", kind: "onyx.Menu", onSelect: "getFirstDay", components: [
+							{name: "menuScroller3", kind: "enyo.Scroller", defaultKind: "onyx.MenuItem", vertical: "auto", classes: "enyo-unselectable", maxHeight: "200px", components: [
 								{value: "1", content: "1", classes: "menuItem"},
 								{value: "2", content: "2", classes: "menuItem"},
 								{value: "3", content: "3", classes: "menuItem"},
@@ -309,6 +251,77 @@ enyo.kind({
 								{value: "30", content: "30", classes: "menuItem"},
 								{value: "31", content: "31", classes: "menuItem"},
 							]}
+							]},
+					]},
+					{kind: "onyx.MenuDecorator", components: [
+						{name: "firstYearContent", content: "Year"},
+						{name: "firstYear", kind: "onyx.Menu", maxHeight: 200, onSelect: "getFirstYear", components: [
+							{value: "2012", content: "2012", classes: "menuItem"},
+							{value: "2013", content: "2013", classes: "menuItem"},
+							{value: "2014", content: "2014", classes: "menuItem"},
+							{value: "2015", content: "2015", classes: "menuItem"},
+							{value: "2016", content: "2016", classes: "menuItem"},
+						]}
+					]}
+				]},
+				{kind: "enyo.FittableColumns", style: "padding: 10px 0px 0px 5px;", components: [
+					{content: "End Date: ", style: "padding: 5px 5px 0px 0px;"},
+					{kind: "onyx.MenuDecorator", components: [
+						{name: "lastMonthContent", content: "Month"},
+						{name: "lastMonth", kind: "onyx.Menu", onSelect: "getLastMonth", components: [
+							{name: "menuScroller4", kind: "enyo.Scroller", defaultKind: "onyx.MenuItem", vertical: "auto", classes: "enyo-unselectable", maxHeight: "200px", components: [
+								{value: "0", content: "Jan", classes: "menuItem"},
+								{value: "1", content: "Feb", classes: "menuItem"},
+								{value: "2", content: "Mar", classes: "menuItem"},
+								{value: "3", content: "Apr", classes: "menuItem"},
+								{value: "4", content: "May", classes: "menuItem"},
+								{value: "5", content: "Jun", classes: "menuItem"},
+								{value: "6", content: "Jul", classes: "menuItem"},
+								{value: "7", content: "Aug", classes: "menuItem"},
+								{value: "8", content: "Sep", classes: "menuItem"},
+								{value: "9", content: "Oct", classes: "menuItem"},
+								{value: "10", content: "Nov", classes: "menuItem"},
+								{value: "11", content: "Dec", classes: "menuItem"},
+							]}
+						]}
+					]},
+					{kind: "onyx.MenuDecorator", components: [
+						{name: "lastDayContent", content: "Day"},
+						{name: "lastDay", kind: "onyx.Menu", onSelect: "getLastDay", components: [
+							{name: "menuScroller5", kind: "enyo.Scroller", defaultKind: "onyx.MenuItem", vertical: "auto", classes: "enyo-unselectable", maxHeight: "200px", components: [
+								{value: "1", content: "1", classes: "menuItem"},
+								{value: "2", content: "2", classes: "menuItem"},
+								{value: "3", content: "3", classes: "menuItem"},
+								{value: "4", content: "4", classes: "menuItem"},
+								{value: "5", content: "5", classes: "menuItem"},
+								{value: "6", content: "6", classes: "menuItem"},
+								{value: "7", content: "7", classes: "menuItem"},
+								{value: "8", content: "8", classes: "menuItem"},
+								{value: "9", content: "9", classes: "menuItem"},
+								{value: "10", content: "10", classes: "menuItem"},
+								{value: "11", content: "11", classes: "menuItem"},
+								{value: "12", content: "12", classes: "menuItem"},
+								{value: "13", content: "13", classes: "menuItem"},
+								{value: "13", content: "14", classes: "menuItem"},
+								{value: "15", content: "15", classes: "menuItem"},
+								{value: "16", content: "16", classes: "menuItem"},
+								{value: "17", content: "17", classes: "menuItem"},
+								{value: "18", content: "18", classes: "menuItem"},
+								{value: "19", content: "19", classes: "menuItem"},
+								{value: "20", content: "20", classes: "menuItem"},
+								{value: "21", content: "21", classes: "menuItem"},
+								{value: "22", content: "22", classes: "menuItem"},
+								{value: "23", content: "23", classes: "menuItem"},
+								{value: "24", content: "24", classes: "menuItem"},
+								{value: "25", content: "25", classes: "menuItem"},
+								{value: "26", content: "26", classes: "menuItem"},
+								{value: "27", content: "27", classes: "menuItem"},
+								{value: "28", content: "28", classes: "menuItem"},
+								{value: "29", content: "29", classes: "menuItem"},
+								{value: "30", content: "30", classes: "menuItem"},
+								{value: "31", content: "31", classes: "menuItem"},
+							]}
+						]}
 					]},
 					{kind: "onyx.MenuDecorator", components: [
 						{name: "lastYearContent", content: "Year"},
