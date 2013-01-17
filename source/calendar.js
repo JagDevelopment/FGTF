@@ -1576,8 +1576,10 @@ enyo.kind({
 	{
 		var savedThis = this;
 		var eventsRef = firebaseRef.child('events');
+		this.onDeviceLoad();
 		this.calendarResize();
 		this.alreadyLoggedIn();
+		
 		
 		eventsRef.on('value', function(snapshot) {
 			var EventName = snapshot.val();
@@ -1932,6 +1934,27 @@ enyo.kind({
 		}
 		
 		this.$.lastDayContent.setContent(lastDate[1]);
+	},
+	
+	onDeviceLoad: function(inSender, inEvent)
+	{
+		document.addEventListener("deviceready", this.onDeviceReady, false);
+	},
+	
+	onDeviceReady: function(inSender, inEvent)
+	{
+		document.addEventListener("resume", this.onResume, false);
+		document.addEventListener("pause", this.onPause, false);
+	},
+	
+	onResume: function(inSender, inEvent)
+	{
+		alert("Test1");
+	},
+	
+	onPause: function(inSender, inEvent)
+	{
+		alert("Test2");
 	},
 	
 	clearText: function(inSender, inEvent) 
