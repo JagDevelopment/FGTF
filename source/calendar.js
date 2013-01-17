@@ -457,7 +457,6 @@ enyo.kind({
 	
 	setupCalendar: function(inSender, inEvent)
 	{
-		alert("Oh yeah");
 		var item = inEvent.item;
 		this.clearAll(item);
 		var startDate = new Date(currYear, currMonth, 1);
