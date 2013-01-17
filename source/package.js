@@ -5,5 +5,6 @@ enyo.depends(
 	"App.js",
 	"calendar.js",
 	"gameBanks.js",
-	"basicFunctions.js"
+	"basicFunctions.js",
+	"mobile.js"
 );
