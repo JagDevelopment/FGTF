@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.JagDevelopment.FGTF"
-        version   = "0.9.7">
+        version   = "0.9.9.3">
     <name>Fighting Game Tournament Finder</name>
 
     <description>
@@ -22,4 +22,5 @@
     <preference name="fullscreen"       value="false" />
 
     <icon src="icon.png" />
+	<icon src="iconBB.png"     gap:platform="blackberry" />
 </widget>
