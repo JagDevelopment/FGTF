@@ -3,7 +3,6 @@
 	This way, you can minify your application, and just remove the "source" folder for production
 */
 #app {
-	margin: 16px;
 	border-radius: 4px;
 	background-image: url('../assets/images/BGPic.png') ;
 	background-repeat: repeat;
@@ -65,7 +64,7 @@ padding: 4px 0px 4px 9px;
 
 .tournamentImage
 {
-background-image: url('../assets/images/sampleTournamentStyle1.png') ;
+background-image: url('../assets/images/multiTournamentFinalsmall.png') ;
 background-repeat: no-repeat;
 height: 120px;
 width: 60px;

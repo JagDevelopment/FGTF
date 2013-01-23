@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.JagDevelopment.FGTF"
+        id        = "com.jagdevelopment.fgtf"
         version   = "0.9.9.3">
     <name>Fighting Game Tournament Finder</name>
 
@@ -16,6 +16,11 @@
 
     <feature name="Fighting Game Tournament Finder" />
 
+	<access subdomains="true" uri="http://www.blackberry.com/">
+	<feature id="blackberry.advertising" required="true" version="1.0.0"/>
+	</access>
+	<access subdomains="false" uri="*"/>
+	
     <preference name="phonegap-version" value="2.2.0" />
     <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />

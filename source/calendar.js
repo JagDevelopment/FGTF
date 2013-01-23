@@ -46,7 +46,7 @@ enyo.kind({
 	{name: "login", content: "Login", style: "float: right; ", ontap: "toLogin"},
 	]},
 	{tag: "hr", classes: "divider"},
-	{name: "basePanel", kind: "enyo.Panels", style: "height: 400px; width: 420px;", draggable: false, components: [
+	{name: "basePanel", kind: "enyo.Panels", style: "height: 400px;", fit: true, draggable: false, components: [
 		{name: "firstPanel", components: [
 			{kind: "enyo.FittableColumns", classes: "monthFinder", components: [
 			{name: "previous", content: "<-", style: "padding-left: 20%;", ontap: "toPrevious"},
@@ -54,8 +54,8 @@ enyo.kind({
 			{name: "next", content: "->", style: "padding-right: 20%;", ontap: "toNext"}, 
 			]},
 			{tag: "hr", name: "ruler", classes: "divider"},
-			{name: "days", content: "sun mon tue wed thu fri sat", style: "font-variant: small-caps; word-spacing: 34px; margin-left: 15px;"},
-			{name: "calendarRows", kind: "enyo.Repeater", count: 6, onSetupItem: "setupCalendar", components: [
+			{name: "days", content: "sun mon tue wed thu fri sat", style: "font-variant: small-caps; word-spacing: 34px; margin-left: 5.5%;"},
+			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%;", onSetupItem: "setupCalendar", components: [
 			{name: "calColumns", kind: "enyo.FittableColumns", style: "height: 50px;", components: [
 				{name: "Sunday", content: "Sunday", classes: "calendarDay", ontap: "toEvent"},
 				{name: "Monday", content: "Monday", classes: "calendarDay", ontap: "toEvent"},
@@ -85,7 +85,7 @@ enyo.kind({
 							{value: "Show All", content: "Show All", classes: "menuItem"},
 						]}
 					]}
-				]}
+				]},
 		]},
 		{name: "creditsPanel", components: [
 			{kind: "enyo.FittableRows", components: [
@@ -453,6 +453,7 @@ enyo.kind({
 		]},
 	],
 	},
+	{name: "AdSpace", kind: "enyo.Control", style: "height: 36px; width: 400px; background: black", fit: true, onclick: "testAlert"},
 	],
 	
 	setupCalendar: function(inSender, inEvent)
@@ -607,28 +608,28 @@ enyo.kind({
 							{
 								if (bankLocation[0] == 0)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/Brawl.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
 								} 
 								else if (bankLocation[0] == 2)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/MarvelvsCapcom3.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
 								}
 								else if (bankLocation[0] == 4)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/Persona4.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
 								}
 								else if (bankLocation[0] == 6)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/KoFXIII.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
 								}
 								else
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/default.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
 								}
 							}
 							else if (gamesList.length > 1)
 							{
-								item.$[days[ndx]].addStyles("background-image: url('assets/images/MultiTournament.png');");
+								item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
 							}
 						}	
 						
@@ -1135,8 +1136,19 @@ enyo.kind({
 				
 	},
 	
+	setupAds: function(inSender, inEvent)
+	{
+		var zoneId = 31848;  //Test ID
+		alert(this.$.AdSpace + " /// ");
+		
+		
+		
+		var bannerObj = new blackberry.advertising.Banner(zoneId, "AdSpace3");
+	},
+	
 	toHome: function(inSender, inEvent)
 	{
+		this.setupAds();
 		this.$.basePanel.setIndex(0);
 		var originalMonth = new Date();
 		row = 0;
@@ -1579,6 +1591,7 @@ enyo.kind({
 		this.calendarResize();
 		this.alreadyLoggedIn();
 		
+		//var zoneId = 161498; 
 		
 		eventsRef.on('value', function(snapshot) {
 			var EventName = snapshot.val();
