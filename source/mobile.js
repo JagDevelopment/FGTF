@@ -1,12 +1,13 @@
 	function onDeviceLoad()
 	{
-		document.addEventListener("deviceready", onDeviceReady, false);
+		document.addEventListener("deviceready", this.onDeviceReady(), false);
 	}
 	
 	function onDeviceReady()
 	{
-		document.addEventListener("resume", onResume, false);
-		document.addEventListener("pause", onPause, false);
+		alert("TestonDeviceReady");
+		document.addEventListener("resume", this.onResume, false);
+		document.addEventListener("pause", this.onPause, false);
 		//navigator.splashscreen.hide();
 	}
 	
@@ -18,7 +19,7 @@
 	
 	function onPause()
 	{
-		alert("Test2");
+		alert("TestPause");
 	}
 	
 	window.onload = onDeviceLoad();
