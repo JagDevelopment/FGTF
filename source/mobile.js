@@ -7,7 +7,7 @@
 	{
 		document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
-		navigator.splashscreen.hide();
+		//navigator.splashscreen.hide();
 	}
 	
 	function onResume()
