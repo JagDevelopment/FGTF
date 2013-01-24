@@ -36,6 +36,11 @@ width: 50%;
 opacity: .3;
 }
 
+#AdSpace3
+{
+z-index: 900;
+}
+
 .calendarDay
 {
 height: 120px;

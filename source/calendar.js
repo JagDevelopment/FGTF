@@ -453,7 +453,7 @@ enyo.kind({
 		]},
 	],
 	},
-	{name: "AdSpace", kind: "enyo.Control", style: "height: 36px; width: 400px; background: black", fit: true, onclick: "testAlert"},
+	{name: "AdSpace", kind: "enyo.Control", id: "AdSpace3", tag: "div", style: "height: 36px; width: 400px;", fit: true},
 	],
 	
 	setupCalendar: function(inSender, inEvent)
@@ -1138,17 +1138,12 @@ enyo.kind({
 	
 	setupAds: function(inSender, inEvent)
 	{
-		var zoneId = 31848;  //Test ID
-		alert(this.$.AdSpace + " /// ");
-		
-		
-		
+		var zoneId = 161498;  //Add your zone ID here
 		var bannerObj = new blackberry.advertising.Banner(zoneId, "AdSpace3");
 	},
 	
 	toHome: function(inSender, inEvent)
 	{
-		this.setupAds();
 		this.$.basePanel.setIndex(0);
 		var originalMonth = new Date();
 		row = 0;
@@ -1591,7 +1586,7 @@ enyo.kind({
 		this.calendarResize();
 		this.alreadyLoggedIn();
 		
-		//var zoneId = 161498; 
+		this.setupAds();
 		
 		eventsRef.on('value', function(snapshot) {
 			var EventName = snapshot.val();
