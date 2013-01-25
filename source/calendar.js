@@ -1133,12 +1133,14 @@ enyo.kind({
 		}
 		
 		this.calendarResize();
-				
 	},
 	
 	setupAds: function(inSender, inEvent)
 	{
-		var zoneId = 161498;  //Add your zone ID here
+		var zoneId = 31848; //Test ID
+		//var zoneId = 161498;  //Add your zone ID here
+		//NEED TO RAISE THE AD UP SOME
+		//CAN YOU CONTROL WHAT AD SHOWS ON WHAT DEVICE?
 		var bannerObj = new blackberry.advertising.Banner(zoneId, "AdSpace3");
 	},
 	
