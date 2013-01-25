@@ -1,0 +1,14 @@
+{
+        "title":          "FGTF",
+        "id":             "com.jagdevelopment.fgtf",
+        "version":        "0.9.8",
+        "vendor":         "JagDevelopment",
+        "vendor_email": "entertainmentbyjag@gmail.com",
+        "vendor_url": "mailto:entertainmentbyjag@gmail.com",
+        "type":           "web",
+        "main":           "index.html",
+        "keywords": ["FGTF", "Fighting Game Tournament Finder", "games", "tournament", "fighting games"],
+        "icon":           "icon.png",  
+        "dockMode": true,
+        "uiRevision": "2"
+}
