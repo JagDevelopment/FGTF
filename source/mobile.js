@@ -1,3 +1,8 @@
+	if (enyo.platform.webos == undefined)
+	{
+		this.dynamicScripts();
+	}	
+	
 	function onDeviceLoad()
 	{
 		document.addEventListener("deviceready", this.onDeviceReady(), false);
@@ -13,7 +18,6 @@
 		if (enyo.platform.webos == undefined)
 		{
 			this.dynamicScripts();
-			setupAds();
 		}
 		
 		//navigator.splashscreen.hide();
@@ -32,16 +36,17 @@
 	
 	function dynamicScripts() {
     var element;
-    var cdn = new Array;
+    var cdn = 'http://www.blackberry.com/app_includes/asdk/adBanner.js';
 
-    cdn[0] = 'http://www.blackberry.com/app_includes/asdk/adBanner.js';
-
-    for (var i in cdn) {
         element = document.createElement('script');
         element.setAttribute('type', 'text/javascript');
-        element.setAttribute('src', cdn[i]);
-        document.body.appendChild(element);
-    }
+        element.setAttribute('src', cdn);
+		
+		if (document.body != null)
+		{
+			//Can make this a switch case statement if you need further dynamic scripts (or figure out how to work variables in there)
+			document.write("<script type=\"text/javascript\" src=\"http://www.blackberry.com/app_includes/asdk/adBanner.js\"><\/script>");
+		}
 
 }
 	

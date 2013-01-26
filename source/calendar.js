@@ -46,7 +46,7 @@ enyo.kind({
 	{name: "login", content: "Login", style: "float: right; ", ontap: "toLogin"},
 	]},
 	{tag: "hr", classes: "divider"},
-	{name: "basePanel", kind: "enyo.Panels", style: "height: 400px;", fit: true, draggable: false, components: [
+	{name: "basePanel", kind: "enyo.Panels", style: "height: 360px;", fit: true, draggable: false, components: [
 		{name: "firstPanel", components: [
 			{kind: "enyo.FittableColumns", classes: "monthFinder", components: [
 			{name: "previous", content: "<-", style: "padding-left: 20%;", ontap: "toPrevious"},
@@ -453,7 +453,7 @@ enyo.kind({
 		]},
 	],
 	},
-	{name: "AdSpace", kind: "enyo.Control", id: "AdSpace3", tag: "div", style: "height: 36px; width: 400px;", fit: true},
+	{name: "AdSpace", kind: "enyo.Control", id: "AdSpace3", tag: "div", style: "height: 36px; width: 400px; margin-left: 40px;", fit: true},
 	],
 	
 	setupCalendar: function(inSender, inEvent)
@@ -1139,8 +1139,6 @@ enyo.kind({
 	{
 		var zoneId = 31848; //Test ID
 		//var zoneId = 161498;  //Add your zone ID here
-		//NEED TO RAISE THE AD UP SOME
-		//CAN YOU CONTROL WHAT AD SHOWS ON WHAT DEVICE?
 		var bannerObj = new blackberry.advertising.Banner(zoneId, "AdSpace3");
 	},
 	
@@ -1593,6 +1591,7 @@ enyo.kind({
 		var eventsRef = firebaseRef.child('events');
 		this.calendarResize();
 		this.alreadyLoggedIn();
+		this.setupAds();
 		
 		eventsRef.on('value', function(snapshot) {
 			var EventName = snapshot.val();
