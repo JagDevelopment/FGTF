@@ -1144,12 +1144,6 @@ enyo.kind({
 	
 	toHome: function(inSender, inEvent)
 	{
-		if (enyo.platform.ie != undefined)
-		{
-			alert("Chrome'd");
-		}
-	
-		alert("BB: " + enyo.platform.blackberry + " webOS: " + enyo.platform.webos + " iOS: " + enyo.platform.ios + " IE: " + enyo.platform.ie);
 		this.$.basePanel.setIndex(0);
 		var originalMonth = new Date();
 		row = 0;
