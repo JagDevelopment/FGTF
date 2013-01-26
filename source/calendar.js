@@ -1591,7 +1591,11 @@ enyo.kind({
 		var eventsRef = firebaseRef.child('events');
 		this.calendarResize();
 		this.alreadyLoggedIn();
-		this.setupAds();
+		
+		if (enyo.platform.webos == undefined)
+		{
+			this.setupAds();
+		}
 		
 		eventsRef.on('value', function(snapshot) {
 			var EventName = snapshot.val();
