@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.jagdevelopment.fgtf"
+        version   = "0.9.8">
+    <name>Fighting Game Tournament Finder</name>
+
+    <description>
+        This app is for users who are trying to find fighting game tournaments or to add some of their own. 
+		The app shows a calendar that displays different tournaments added by users.
+    </description>
+
+    <author href="http://twitter.com/jagdevelopment" email="entertainmentbyjag@gmail.com">
+        Jared Beaudrot
+    </author>
+
+	<access origin="*" />
+	
+	<access subdomains="true" uri="http://www.blackberry.com/">
+	<feature id="blackberry.advertising" required="true" version="1.0.0"/>
+	</access>
+	<access subdomains="false" uri="*"/>
+	
+    <preference name="phonegap-version" value="2.2.0" />
+    <preference name="orientation"      value="portrait" />
+    <preference name="target-device"    value="universal" />
+    <preference name="fullscreen"       value="false" />
+
+    <icon src="icon.png" />
+	<icon src="iconBB.png"     gap:platform="blackberry" />
+	<icon src="icon.png"     gap:platform="webos" />
+</widget>
