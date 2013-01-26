@@ -42,7 +42,7 @@ enyo.kind({
 	components:[
 	{name: "constantTitle", kind: "enyo.FittableColumns", components: [
 	{name: "home", content: "Home", style: "float: left; width: 9.1%;", ontap: "toHome"},
-	{name: "title", classes: "title", ontap: "toCredits", components: [ {kind:"enyo.Image", onload: "loadEventList", src: "assets/images/FGTFTitle2.png"} ] },
+	{name: "title", classes: "title", ontap: "toCredits", components: [ {name: "titleImg", kind:"enyo.Image", onload: "loadEventList", src: "assets/images/FGTFTitle2.png"} ] },
 	{name: "login", content: "Login", style: "float: right; ", ontap: "toLogin"},
 	]},
 	{tag: "hr", classes: "divider"},
@@ -1585,6 +1585,9 @@ enyo.kind({
 		var eventsRef = firebaseRef.child('events');
 		this.calendarResize();
 		this.alreadyLoggedIn();
+		
+		var titleWidth = parseInt(window.innerWidth / 1.83);
+		this.$.titleImg.addStyles("width: " + titleWidth + "px;");
 		
 		if (enyo.platform.webos == undefined)
 		{
