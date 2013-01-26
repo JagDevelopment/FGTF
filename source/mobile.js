@@ -1,4 +1,3 @@
-
 	if (enyo.platform.webos == undefined)
 	{
 		this.dynamicScripts();

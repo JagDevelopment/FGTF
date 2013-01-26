@@ -1137,8 +1137,8 @@ enyo.kind({
 	
 	setupAds: function(inSender, inEvent)
 	{
-		var zoneId = 31848; //Test ID
-		//var zoneId = 161498;  //Add your zone ID here
+		//var zoneId = 31848; //Test ID
+		var zoneId = 161498;  //Add your zone ID here
 		var bannerObj = new blackberry.advertising.Banner(zoneId, "AdSpace3");
 	},
 	
