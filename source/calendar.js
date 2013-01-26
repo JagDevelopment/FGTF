@@ -41,8 +41,8 @@ enyo.kind({
 	allowHtml: true,
 	components:[
 	{name: "constantTitle", kind: "enyo.FittableColumns", components: [
-	{name: "credits", content: "Credits", style: "float: left; width: 9.1%;", ontap: "toCredits"},
-	{name: "title", classes: "title", ontap: "toHome", components: [ {kind:"enyo.Image", onload: "loadEventList", src: "assets/images/FGTFTitle2.png"} ] },
+	{name: "home", content: "Home", style: "float: left; width: 9.1%;", ontap: "toHome"},
+	{name: "title", classes: "title", ontap: "toCredits", components: [ {kind:"enyo.Image", onload: "loadEventList", src: "assets/images/FGTFTitle2.png"} ] },
 	{name: "login", content: "Login", style: "float: right; ", ontap: "toLogin"},
 	]},
 	{tag: "hr", classes: "divider"},
