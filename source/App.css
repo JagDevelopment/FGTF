@@ -4,6 +4,8 @@
 */
 #app {
 	border-radius: 4px;
+	background-image: url('assets/images/BGpic.png') ;
+	background-repeat: repeat;
 	padding: 16px;
 	box-shadow: 5px 5px 5px 5px #000;
 	font-family: "trebuchet MS bold";
