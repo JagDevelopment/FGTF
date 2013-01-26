@@ -4,7 +4,7 @@
 */
 #app {
 	border-radius: 4px;
-	background-image: url('../assets/images/BGPic.png') ;
+	background-image: url('assets/images/BGPic.png') ;
 	background-repeat: repeat;
 	padding: 16px;
 	box-shadow: 5px 5px 5px 5px #000;
@@ -67,11 +67,3 @@ text-align: center;
 padding: 4px 0px 4px 9px;
 }
 
-.tournamentImage
-{
-background-image: url('../assets/images/multiTournamentFinalsmall.png') ;
-background-repeat: no-repeat;
-height: 120px;
-width: 60px;
-border: 2px ridge #CCC;
-}
