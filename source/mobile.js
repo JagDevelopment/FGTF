@@ -10,7 +10,7 @@
 	
 	function onDeviceReady()
 	{
-		//alert("TestonDeviceReady");
+		alert("TestonDeviceReady");
 		//alert("Chrome: " + enyo.platform.chrome + "webOS: " + enyo.platform.webos + "iOS: " + enyo.platform.ios + " IE: " + enyo.platform.ie);
 		document.addEventListener("resume", this.onResume, false);
 		document.addEventListener("pause", this.onPause, false);

@@ -509,6 +509,8 @@ enyo.kind({
 		
 		for (ndx=0; ndx <= 6; ndx++)
 		{
+			item.$[days[ndx]].addStyles("width: " + calendarSpotSize + "px;");
+		
 			if (rowContents[ndx] > numDays[currMonth])
 			{
 			

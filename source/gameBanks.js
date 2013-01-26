@@ -12,3 +12,6 @@ var deadOrAliveWordBank = ["DoA5", "Dead or Alive 5", "DeadorAlive5", "DoA", "De
 
 var allBanks = [brawlWordBank, streetFighterWordBank, marvelVsCapcomWordBank, soulCaliburWordBank, personaWordBank, tekkenWordBank,
 KoFWordBank, meleeWordBank, mortalKombatWordBank, deadOrAliveWordBank];
+
+var innerWidth = window.innerWidth;
+var calendarSpotSize = innerWidth/8;
