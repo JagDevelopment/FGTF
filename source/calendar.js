@@ -46,7 +46,7 @@ enyo.kind({
 	{name: "login", content: "Login", style: "float: right; ", ontap: "toLogin"},
 	]},
 	{tag: "hr", classes: "divider"},
-	{name: "basePanel", kind: "enyo.Panels", style: "height: 360px;", fit: true, draggable: false, components: [
+	{name: "basePanel", kind: "enyo.Panels", style: "height: 400px;", fit: true, draggable: false, components: [
 		{name: "firstPanel", components: [
 			{kind: "enyo.FittableColumns", classes: "monthFinder", components: [
 			{name: "previous", content: "<-", style: "padding-left: 20%;", ontap: "toPrevious"},
@@ -54,8 +54,10 @@ enyo.kind({
 			{name: "next", content: "->", style: "padding-right: 20%;", ontap: "toNext"}, 
 			]},
 			{tag: "hr", name: "ruler", classes: "divider"},
-			{name: "days", content: "sun mon tue wed thu fri sat", style: "font-variant: small-caps; word-spacing: 34px; margin-left: 5.5%;"},
-			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%;", onSetupItem: "setupCalendar", components: [
+			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps; margin-left: " + window.innerWidth/23 + "px;", onSetupItem: "setupDays", components: [
+				{name: "dayPlaceholder", content: "day"},
+			]},
+			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%; clear: both;", onSetupItem: "setupCalendar", components: [
 			{name: "calColumns", kind: "enyo.FittableColumns", style: "height: 50px;", components: [
 				{name: "Sunday", content: "Sunday", classes: "calendarDay", ontap: "toEvent"},
 				{name: "Monday", content: "Monday", classes: "calendarDay", ontap: "toEvent"},
@@ -102,14 +104,14 @@ enyo.kind({
 		{name: "loginPanel", components: [
 			{kind: "enyo.FittableRows", name: "loginRows", components: [
 				{content: "Enter your login information.", style: "text-align: center; padding-bottom: 5px;"},
-				{kind: "enyo.FittableColumns", components: [
+				/**{kind: "enyo.FittableColumns", components: [
 				{content: "Email:", style: "width: 51%;"},
 				{content: "Password:"},
-				]},
+				]},**/
 				{kind: "onyx.InputDecorator", style: "background-color: white; margin-right: 20px;", components:
 					[{kind: "onyx.Input", defaultFocus:true, placeholder:"Email", name:"loginEmail", type: "text", ontap: "clearText"}]},
 				{kind: "onyx.InputDecorator", style: "background-color: white;", components:
-					[{kind: "onyx.Input", defaultFocus:true, value:"", name:"loginPassword", type: "password", ontap: "clearText"}]},
+					[{kind: "onyx.Input", defaultFocus:true, value:"", placeholder: "Password", name:"loginPassword", type: "password", ontap: "clearText"}]},
 					{kind: "onyx.Button", content: "Log In", style: "margin-left: 38%; margin-top: 10px;", ontap: "loggingIn"},
 				{kind: "enyo.FittableColumns", style: "padding-top: 10px;", components: [	
 					{content: "Not registered yet?", style: "padding: 8px 20px 0px 0px;"},
@@ -124,19 +126,19 @@ enyo.kind({
 		{name: "registerPanel", components: [
 			{kind: "enyo.FittableRows", components: [
 				{content: "Enter your registration information.", style: "text-align: center; padding-bottom: 5px;"},
-				{kind: "enyo.FittableColumns", components: [
+				/**{kind: "enyo.FittableColumns", components: [
 					{content: "Name:", style: "width: 51%;"},
 					{content: "Password:"},
-				]},
+				]},**/
 				{kind: "onyx.InputDecorator", style: "background-color: white; margin-right: 20px;", components:
 					[{kind: "onyx.Input", defaultFocus:true, placeholder:"Name", onchange: "watchLength", name:"registerName", type: "text", ontap: "clearText"}]},
 				{kind: "onyx.InputDecorator", style: "background-color: white;", components:
-					[{kind: "onyx.Input", defaultFocus:true, value:"", name:"registerPassword", type: "password", ontap: "clearText"}]},
-					{content: "Email address: ", style: "margin-top: 20px;"},
+					[{kind: "onyx.Input", defaultFocus:true, value:"", placeholder:"Passwprd", name:"registerPassword", type: "password", ontap: "clearText"}]},
+					//{content: "Email address: ", style: "margin-top: 20px;"},
 				{kind: "onyx.InputDecorator", style: "background-color: white; margin-right: 20px; width: 97.5%", components:
 					[{kind: "onyx.Input", defaultFocus:true, style: "width: 100%;", placeholder:"Email", name: "registerEmail", type: "text", ontap: "clearText"}]},
 				{kind: "onyx.Button", content: "Register", ontap:"registerUser", style: "width: 50%; margin-left: 25%; margin-top: 25px;"},
-				{content: "By registering, you can keep up with what tournaments you've gone or are going to, among other things!"}
+				{content: "By registering, you can keep up with what tournaments you've gone to or are going to, among other things!"}
 			]},
 			{kind: "onyx.Popup", name: "registered", floating: true, centered: true, autoDismiss: true,
 				scrim: true, style: "padding: 10px;", components: [
@@ -861,6 +863,52 @@ enyo.kind({
 					}
 				}
 		}
+	},
+	
+	setupDays: function(inSender, inEvent)
+	{
+		index = inEvent.index;
+		item = inEvent.item;
+		
+		if (index == 0)
+		{
+			alert("Here");
+			item.$.dayPlaceholder.setContent("sun");
+			item.$.dayPlaceholder.addStyles("float: left;");
+		}
+		else if (index == 1)
+		{
+			item.$.dayPlaceholder.setContent("mon");
+			item.$.dayPlaceholder.addStyles("float: left;");
+		}
+		else if (index == 2)
+		{
+			item.$.dayPlaceholder.setContent("tue");
+			item.$.dayPlaceholder.addStyles("float: left;");
+		}
+		else if (index == 3)
+		{
+			item.$.dayPlaceholder.setContent("wed");
+			item.$.dayPlaceholder.addStyles("float: left;");
+		}
+		else if (index == 4)
+		{
+			item.$.dayPlaceholder.setContent("thu");
+			item.$.dayPlaceholder.addStyles("float: left;");
+		}
+		else if (index == 5)
+		{
+			item.$.dayPlaceholder.setContent("fri");
+			item.$.dayPlaceholder.addStyles("float: left;");
+		}
+		else if (index == 6)
+		{
+			item.$.dayPlaceholder.setContent("sat");
+			item.$.dayPlaceholder.addStyles("float: left; width: 100%;");
+		}
+		
+			item.$.dayPlaceholder.addStyles("width: " + calendarSpotSize + "px;");
+		
 	},
 	
 	setupTournamentsCompleted: function(inSender, inEvent)
