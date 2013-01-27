@@ -46,7 +46,7 @@ enyo.kind({
 	{name: "login", content: "Login", style: "float: right; ", ontap: "toLogin"},
 	]},
 	{tag: "hr", classes: "divider"},
-	{name: "basePanel", kind: "enyo.Panels", style: "height: 400px;", fit: true, draggable: false, components: [
+	{name: "basePanel", kind: "enyo.Panels", style: "height: 420px;", fit: true, draggable: false, components: [
 		{name: "firstPanel", components: [
 			{kind: "enyo.FittableColumns", classes: "monthFinder", components: [
 			{name: "previous", content: "<-", style: "padding-left: 20%;", ontap: "toPrevious"},
@@ -54,7 +54,7 @@ enyo.kind({
 			{name: "next", content: "->", style: "padding-right: 20%;", ontap: "toNext"}, 
 			]},
 			{tag: "hr", name: "ruler", classes: "divider"},
-			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps; margin-left: " + window.innerWidth/23 + "px;", onSetupItem: "setupDays", components: [
+			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps; margin-left: 2.4%;", onSetupItem: "setupDays", components: [
 				{name: "dayPlaceholder", content: "day"},
 			]},
 			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%; clear: both;", onSetupItem: "setupCalendar", components: [
@@ -115,7 +115,7 @@ enyo.kind({
 					{kind: "onyx.Button", content: "Log In", style: "margin-left: 38%; margin-top: 10px;", ontap: "loggingIn"},
 				{kind: "enyo.FittableColumns", style: "padding-top: 10px;", components: [	
 					{content: "Not registered yet?", style: "padding: 8px 20px 0px 0px;"},
-					{kind: "onyx.Button", content: "Click here to sign up", ontap: "toRegister"},
+					{kind: "onyx.Button", content: "Sign Up", ontap: "toRegister"},
 					{kind: "onyx.Popup", name: "loginErrorPopup", floating: true, centered: true, autoDismiss: true,
 					scrim: true, style: "padding: 10px;", components: [
 						{content: "Your account information doesn't match up with our records. Please try again or register if you have not already done so."},
@@ -133,7 +133,7 @@ enyo.kind({
 				{kind: "onyx.InputDecorator", style: "background-color: white; margin-right: 20px;", components:
 					[{kind: "onyx.Input", defaultFocus:true, placeholder:"Name", onchange: "watchLength", name:"registerName", type: "text", ontap: "clearText"}]},
 				{kind: "onyx.InputDecorator", style: "background-color: white;", components:
-					[{kind: "onyx.Input", defaultFocus:true, value:"", placeholder:"Passwprd", name:"registerPassword", type: "password", ontap: "clearText"}]},
+					[{kind: "onyx.Input", defaultFocus:true, value:"", placeholder:"Password", name:"registerPassword", type: "password", ontap: "clearText"}]},
 					//{content: "Email address: ", style: "margin-top: 20px;"},
 				{kind: "onyx.InputDecorator", style: "background-color: white; margin-right: 20px; width: 97.5%", components:
 					[{kind: "onyx.Input", defaultFocus:true, style: "width: 100%;", placeholder:"Email", name: "registerEmail", type: "text", ontap: "clearText"}]},
@@ -716,6 +716,7 @@ enyo.kind({
 		  }
 		  else
 		  {
+			alert(email + " " + password);
 			savedThis.$.loginErrorPopup.show();
 		  }
 		});
