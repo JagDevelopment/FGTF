@@ -14,6 +14,7 @@ var row=0;
 var allEvents = new Array();
 var scope;
 var multiEventList = new Array();
+var calendarSpot = innerWidth/8;
 var streamedOnline;
 var sortBy = "Show All";
 var firstDate = new Array();
@@ -55,7 +56,7 @@ enyo.kind({
 			]},
 			{tag: "hr", name: "ruler", classes: "divider"},
 			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps; margin-left: 2.4%;", onSetupItem: "setupDays", components: [
-				{name: "dayPlaceholder", content: "day", style: "width:" + calendarSpotSize + "px;"},
+				{name: "dayPlaceholder", content: "day", style: "width:" + calendarSpot + "px;"},
 			]},
 			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%; clear: both;", onSetupItem: "setupCalendar", components: [
 			{name: "calColumns", kind: "enyo.FittableColumns", style: "height: 50px;", components: [

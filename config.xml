@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.jagdevelopment.fgtf"
-        version   = "0.9.8">
+        version   = "0.9.6">
     <name>Fighting Game Tournament Finder</name>
 
     <description>
