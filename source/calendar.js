@@ -873,7 +873,6 @@ enyo.kind({
 		
 		if (index == 0)
 		{
-			alert("Here");
 			item.$.dayPlaceholder.setContent("sun");
 			item.$.dayPlaceholder.addStyles("float: left;");
 		}

@@ -11,7 +11,7 @@
 	function onDeviceReady()
 	{
 		//Load splash screen
-		navigator.splashscreen.show();
+		//navigator.splashscreen.show();
 		document.addEventListener("resume", this.onResume, false);
 		document.addEventListener("pause", this.onPause, false);
 		
