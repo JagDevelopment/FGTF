@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.jagdevelopment.fgtf"
-        version   = "0.9.9">
+        version   = "0.9.8">
     <name>Fighting Game Tournament Finder</name>
 
     <description>
@@ -30,5 +30,7 @@
 	<icon src="iconBB.png"     gap:platform="blackberry" />
 	<icon src="icon.png"     gap:platform="webos" />
 	
-	<gap:splash src="assets/images/splashScreen.png"  gap:platform="android" />
+	<!--<plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/> 
+	<gap:splash src="assets/res/drawable/splashScreen.png"  gap:platform="android" /> -->
+	<gap:splash src="splash.png" />
 </widget>
