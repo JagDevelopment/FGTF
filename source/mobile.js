@@ -9,7 +9,9 @@
 	}
 	
 	function onDeviceReady()
-	{	
+	{
+		//Load splash screen
+		//navigator.splashscreen.show(); 
 		document.addEventListener("resume", this.onResume, false);
 		document.addEventListener("pause", this.onPause, false);
 		
@@ -17,6 +19,10 @@
 		{
 			this.dynamicScripts();
 		}
+		
+		/*setTimeout(function() {
+		//navigator.splashscreen.hide();
+		}, 5000);*/
 	}
 	
 	function onResume()
