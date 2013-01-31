@@ -512,7 +512,7 @@ enyo.kind({
 		
 		for (ndx=0; ndx <= 6; ndx++)
 		{
-			item.$[days[ndx]].addStyles("width: " + calendarSpotSize + "px;");
+			item.$[days[ndx]].addStyles("width: " + calendarSpotSize-1 + "px;");
 		
 			if (rowContents[ndx] > numDays[currMonth])
 			{
@@ -1263,7 +1263,7 @@ enyo.kind({
 			localStorage.userName = tempName;
 			localStorage.isLoggedin = true;
 			nameRef.set({name: tempName, password: password, email: email, userid: user.id});
-			presenceRef.setOnDisconnect(false);
+			presenceRef.onDisconnect.set(false);
 			presenceRef.set(true);
 			savedThis.$.registered.show();
 			savedThis.toHome();
@@ -1624,7 +1624,7 @@ enyo.kind({
 				var usersRef = firebaseRef.child('users');
 				var nameRef = usersRef.child(name);
 				var presenceRef = nameRef.child("online");
-				presenceRef.setOnDisconnect(false);
+				presenceRef.onDisconnect.set(false);
 				presenceRef.set(true);
 			}
 		}
