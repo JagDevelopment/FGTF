@@ -30,11 +30,11 @@
 	<icon src="iconBB.png"     gap:platform="blackberry" />
 	<icon src="icon.png"     gap:platform="webos" />
 	
-	<!--<gap:splash src="splash.png" />
+	<gap:splash src="splash.png" />
 	<gap:splash src="assets/res/drawable/splashScreen.png"  gap:platform="android" /> 
 	<gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
 	<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
 	<gap:splash src="splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
-	<gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" /> -->
+	<gap:splash src="res/screen/blackberry/screen-225.png"         gap:platform="blackberry" />
 </widget>
