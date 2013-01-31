@@ -12,6 +12,7 @@
 	{
 		//Load splash screen
 		//navigator.splashscreen.show(); 
+		alert(this);
 		document.addEventListener("resume", this.onResume, false);
 		document.addEventListener("pause", this.onPause, false);
 		

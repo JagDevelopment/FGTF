@@ -10,9 +10,22 @@ The point of this app is to make finding and planning for fighting game tourname
 enyo.kind({
 	name: "App",
 	fit: true,
-	style: "border: 3px ridge #000; background-image: url('assets/images/BGpic.png'); background-repeat: repeat;", //height: 530px;
+	style: "border: 3px ridge #000; background-image: url('assets/images/BGpic.png'); background-repeat: repeat;",
 	components:[
+		{name: "splash", kind:"enyo.Image", style: "z-index: 100; position:absolute; width: " + appWidth + "px; height: " + appHeight + "px;",
+		onload: "splashScreen", src: "splash.png"},
 		{kind: "Calendar"},
 	],
+	
+	splashScreen: function(inSender, inEvent)
+	{ //       480                 360
+		alert(appWidth + " " + appHeight);
+	
+		savedThis = this;
+		
+		setTimeout(function() {
+			savedThis.$.splash.addStyles("z-index:-100; position: absolute;");
+		}, 5000);
+	},
 });
 
