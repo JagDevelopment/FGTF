@@ -12,8 +12,8 @@ enyo.kind({
 	fit: true,
 	style: "border: 3px ridge #000; background-image: url('assets/images/BGpic.png'); background-repeat: repeat;",
 	components:[
-		{name: "splash", kind:"enyo.Image", style: "z-index: 100; position:absolute; width: " + appWidth + "px; height: " + appHeight + "px;",
-		onload: "splashScreen", src: "splash.png"},
+	//	{name: "splash", kind:"enyo.Image", style: "z-index: 100; position:absolute; width: " + appWidth + "px; height: " + appHeight + "px;",
+	//	onload: "splashScreen", src: "splash.png"},
 		{kind: "Calendar"},
 	],
 	
