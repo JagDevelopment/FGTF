@@ -50,6 +50,13 @@ z-index: 10;
 position: relative;
 }
 
+.eventDay
+{
+background-image: url('assets/images/multiTournamentFinalsmall.png');
+background-repeat: no-repeat;
+background-position: center;
+}
+
 .title
 {
 margin-left: 12%;

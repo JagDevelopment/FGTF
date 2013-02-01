@@ -55,7 +55,7 @@ enyo.kind({
 			{name: "next", content: "->", style: "padding-right: 20%;", ontap: "toNext"}, 
 			]},
 			{tag: "hr", name: "ruler", classes: "divider"},
-			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps; margin-left: 2.4%;", onSetupItem: "setupDays", components: [
+			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps;", onSetupItem: "setupDays", components: [
 				{name: "dayPlaceholder", content: "day", style: "width:" + calendarSpot + "px;"},
 			]},
 			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%; clear: both;", onSetupItem: "setupCalendar", components: [
@@ -613,28 +613,28 @@ enyo.kind({
 							{
 								if (bankLocation[0] == 0)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png'); background-position: center;	background-repeat: no-repeat;");
 								} 
 								else if (bankLocation[0] == 2)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png'); background-position: center;	background-repeat: no-repeat;");
 								}
 								else if (bankLocation[0] == 4)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png'); background-position: center;	background-repeat: no-repeat;");
 								}
 								else if (bankLocation[0] == 6)
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png'); background-position: center;	background-repeat: no-repeat;");
 								}
 								else
 								{
-									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
+									item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png'); background-position: center;	background-repeat: no-repeat;");
 								}
 							}
 							else if (gamesList.length > 1)
 							{
-								item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png');");
+								item.$[days[ndx]].addStyles("background-image: url('assets/images/multiTournamentFinalsmall.png'); background-position: center;	background-repeat: no-repeat;");
 							}
 						}	
 						
