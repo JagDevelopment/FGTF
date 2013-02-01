@@ -55,8 +55,8 @@ enyo.kind({
 			{name: "next", content: "->", style: "padding-right: 20%;", ontap: "toNext"}, 
 			]},
 			{tag: "hr", name: "ruler", classes: "divider"},
-			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps;", onSetupItem: "setupDays", components: [
-				{name: "dayPlaceholder", content: "day", style: "width:" + calendarSpot + "px;"},
+			{name: "daysRepeater", kind: "enyo.Repeater", count: 7, style: "font-variant: small-caps; margin-left: 2.4%;", onSetupItem: "setupDays", components: [
+				{name: "dayPlaceholder", content: "day"},
 			]},
 			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%; clear: both;", onSetupItem: "setupCalendar", components: [
 			{name: "calColumns", kind: "enyo.FittableColumns", style: "height: 50px;", components: [
@@ -875,32 +875,33 @@ enyo.kind({
 		if (index == 0)
 		{
 			item.$.dayPlaceholder.setContent("sun");
-			item.$.dayPlaceholder.addStyles("float: left;");
+			item.$.dayPlaceholder.addStyles("float: left; width:" + calendarSpot-1 + "px;");
+			
 		}
 		else if (index == 1)
 		{
 			item.$.dayPlaceholder.setContent("mon");
-			item.$.dayPlaceholder.addStyles("float: left;");
+			item.$.dayPlaceholder.addStyles("float: left; width:" + calendarSpot-1 + "px;");
 		}
 		else if (index == 2)
 		{
 			item.$.dayPlaceholder.setContent("tue");
-			item.$.dayPlaceholder.addStyles("float: left;");
+			item.$.dayPlaceholder.addStyles("float: left; width:" + calendarSpot-1 + "px;");
 		}
 		else if (index == 3)
 		{
 			item.$.dayPlaceholder.setContent("wed");
-			item.$.dayPlaceholder.addStyles("float: left;");
+			item.$.dayPlaceholder.addStyles("float: left; width:" + calendarSpot-1 + "px;");
 		}
 		else if (index == 4)
 		{
 			item.$.dayPlaceholder.setContent("thu");
-			item.$.dayPlaceholder.addStyles("float: left;");
+			item.$.dayPlaceholder.addStyles("float: left; width:" + calendarSpot-1 + "px;");
 		}
 		else if (index == 5)
 		{
 			item.$.dayPlaceholder.setContent("fri");
-			item.$.dayPlaceholder.addStyles("float: left;");
+			item.$.dayPlaceholder.addStyles("float: left; width:" + calendarSpot-1 + "px;");
 		}
 		else if (index == 6)
 		{
@@ -908,7 +909,7 @@ enyo.kind({
 			item.$.dayPlaceholder.addStyles("float: left; width: 100%;");
 		}
 		
-			item.$.dayPlaceholder.addStyles("width: " + calendarSpotSize + "px;");
+			//item.$.dayPlaceholder.addStyles("width: " + calendarSpotSize + "px;");
 		
 	},
 	
