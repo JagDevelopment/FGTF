@@ -10,7 +10,7 @@ The point of this app is to make finding and planning for fighting game tourname
 enyo.kind({
 	name: "App",
 	fit: true,
-	style: "border: 3px ridge #000; background-image: url('assets/images/BGpic.png'); background-repeat: repeat;", //height: 530px;
+	style: "height: 650px; border: 3px ridge #000; background-image: url('assets/images/BGpic.png'); background-repeat: repeat;",
 	components:[
 		{kind: "Calendar"},
 	],

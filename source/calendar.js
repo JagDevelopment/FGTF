@@ -60,13 +60,13 @@ enyo.kind({
 			]},
 			{name: "calendarRows", kind: "enyo.Repeater", count: 6, style: "margin-left: 2.4%; clear: both;", onSetupItem: "setupCalendar", components: [
 			{name: "calColumns", kind: "enyo.FittableColumns", style: "height: 50px;", components: [
-				{name: "Sunday", content: "Sunday", classes: "calendarDay", ontap: "toEvent"},
-				{name: "Monday", content: "Monday", classes: "calendarDay", ontap: "toEvent"},
-				{name: "Tuesday", content: "Tuesday", classes: "calendarDay", ontap: "toEvent"},
-				{name: "Wednesday", content: "Wednesday", classes: "calendarDay", ontap: "toEvent"},
-				{name: "Thursday", content: "Thursday", classes: "calendarDay", ontap: "toEvent"},
-				{name: "Friday", content: "Friday", classes: "calendarDay", ontap: "toEvent"},
-				{name: "Saturday", content: "Saturday", classes: "calendarDay", ontap: "toEvent"},
+				{name: "Sunday", content: "Sunday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
+				{name: "Monday", content: "Monday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
+				{name: "Tuesday", content: "Tuesday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
+				{name: "Wednesday", content: "Wednesday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
+				{name: "Thursday", content: "Thursday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
+				{name: "Friday", content: "Friday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
+				{name: "Saturday", content: "Saturday", classes: "calendarDay", style: "width: " + calendarSpot + "px;", ontap: "toEvent"},
 				]}
 			]},
 			{kind: "enyo.FittableColumns", style: "padding-top: 5px; padding-left: 20%;", components: [
